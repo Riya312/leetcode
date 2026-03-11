@@ -33,3 +33,30 @@
 	<li><code>0 &lt;= Node.val &lt;= 9</code></li>
 	<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
 </ul>
+
+
+
+
+30-Second Explanation (Interview Style)
+
+Since the digits are stored in reverse order, the head of each linked list represents the ones place, so we can add the numbers just like element-wise addition with carry.
+
+Create a dummy node to simplify building the result list.
+
+Traverse both linked lists simultaneously.
+
+At each step:
+
+Add the values from both nodes and the carry.
+
+The digit to store is sum % 10.
+
+Update carry using sum // 10.
+
+Move to the next nodes.
+
+Continue until both lists are finished and carry becomes 0.
+
+Return dummy.next as the head of the result list.
+
+Time complexity is O(max(n, m)) since we traverse both lists once.
